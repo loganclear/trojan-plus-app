@@ -34,9 +34,6 @@ namespace TrojanPlusApp.Droid
     using Android.Util;
     using AndroidX.Core.App;
     using Java.Lang;
-    using Microsoft.AppCenter;
-    using Microsoft.AppCenter.Analytics;
-    using Microsoft.AppCenter.Crashes;
     using Microsoft.Maui.Controls;
     using Newtonsoft.Json;
     using TrojanPlusApp.Models;
@@ -139,8 +136,6 @@ namespace TrojanPlusApp.Droid
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            AppCenter.Start("ac977bfd-2c63-4663-8fe1-4d3ea3f4750c", typeof(Analytics), typeof(Crashes));
-
             base.OnCreate(savedInstanceState);
 
             // make status bar dark not black
