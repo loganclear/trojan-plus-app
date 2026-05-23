@@ -159,7 +159,7 @@ namespace TrojanPlusApp.Models
         "        \"verify\": ${ssl.verify},\n" +
         "        \"verify_hostname\": ${ssl.verify_hostname},\n" +
         "        \"cert\": \"${ssl.cert}\",\n" +
-        "        \"cipher\": \"ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:AES256-SHA\",\n" +
+        "        \"cipher\": \"ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305\",\n" +
         "        \"cipher_tls13\": \"TLS_AES_256_GCM_SHA384:TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256\",\n" +
         "        \"sni\": \"${ssl.sni}\",\n" +
         "        \"alpn\": [\n" +
@@ -169,7 +169,7 @@ namespace TrojanPlusApp.Models
         "        \"reuse_session\": true,\n" +
         "        \"ssl_shutdown_wait_time\": ${ssl.ssl_shutdown_wait_time},\n" +
         "        \"session_ticket\": true,\n" +
-        "        \"curves\": \"X25519\"\n" +
+        "        \"curves\": \"X25519:P-256:P-384\"\n" +
         "    },\n" +
         "    \"tcp\": {\n" +
         "        \"no_delay\": true,\n" +
