@@ -2,7 +2,11 @@
 
 # Trojan Plus App - Android Build and Install Script
 
-# 1. Build the Android project
+# 1. Clean build cache
+echo "Cleaning build cache..."
+dotnet clean TrojanPlusApp.Android/TrojanPlusApp.Android.csproj -f net10.0-android -c Release
+
+# 2. Build the Android project
 echo "Building Android project..."
 dotnet publish TrojanPlusApp.Android/TrojanPlusApp.Android.csproj -f net10.0-android -c Release
 

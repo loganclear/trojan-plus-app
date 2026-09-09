@@ -61,6 +61,9 @@ namespace TrojanPlusApp.Models
 
         public bool EnableTCPFastOpen { get; set; }
 
+        public bool EnableQuic { get; set; }
+        public bool EnableOnlyQuicForDebug { get; set; }
+
         // Debug Options
         public bool EnableDebugLog { get; set; } = false;
 
@@ -179,6 +182,10 @@ namespace TrojanPlusApp.Models
         "        \"fast_open_qlen\": 20,\n" +
         "        \"connect_time_out\": ${tcp.connect_time_out}\n" +
         "    },\n" +
+        "    \"quic\": {\n" +
+        "        \"enabled\": ${quic.enabled},\n" +
+        "        \"debug_disable_tcp\": ${quic.debug_disable_tcp}\n" +
+        "    },\n" +
         "    \"experimental\": {\n" +
         "        \"pipeline_num\": ${experimental.pipeline_num},\n" +
         "        \"pipeline_timeout\": ${experimental.pipeline_timeout},\n" +
@@ -262,6 +269,9 @@ namespace TrojanPlusApp.Models
 
             config = config.Replace("${tcp.fast_open}", EnableTCPFastOpen ? "true" : "false");
             config = config.Replace("${tcp.connect_time_out}", "5");
+
+            config = config.Replace("${quic.enabled}", EnableQuic ? "true" : "false");
+            config = config.Replace("${quic.debug_disable_tcp}", EnableOnlyQuicForDebug ? "true" : "false");
 
             config = config.Replace("${experimental.pipeline_num}", EnablePipeline ? "5" : "0");
             config = config.Replace("${experimental.pipeline_timeout}", "60");

@@ -95,7 +95,24 @@ namespace TrojanPlusApp.Views
 
             try
             {
-                File.WriteAllText(App.Instance.ConfigPath, host.PrepareConfig(viewModel));
+                string configContent = host.PrepareConfig(viewModel);
+                File.WriteAllText(App.Instance.ConfigPath, configContent);
+#if ANDROID
+                try
+                {
+                    var extDir = Android.App.Application.Context.GetExternalFilesDir(null);
+                    if (extDir != null)
+                    {
+                        string targetPath = Path.Combine(extDir.AbsolutePath, "config_debug.json");
+                        File.WriteAllText(targetPath, configContent);
+                        Console.WriteLine("DEBUG: Config successfully written to " + targetPath);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("DEBUG: Failed to copy external config: " + ex.Message);
+                }
+#endif
                 App.Instance.Start(viewModel.DataStore.Settings);
 
                 viewModel.IsConnectBtnEnabled = false;

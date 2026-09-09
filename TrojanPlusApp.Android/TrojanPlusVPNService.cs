@@ -124,7 +124,11 @@ namespace TrojanPlusApp.Droid
             base.OnDestroy();
 
             // kill this service to reset memory, otherwise libtrojan.so won't work
-            Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+            // Delay the kill to avoid DeadObjectException during unbinding
+            new Handler(Looper.MainLooper).PostDelayed(() =>
+            {
+                Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+            }, 500);
         }
 
         public override bool OnUnbind(Intent intent)
@@ -218,6 +222,8 @@ namespace TrojanPlusApp.Droid
                     vpnFD = builder.Establish();
 
                     configFile = configFile.Replace("${tun.tun_fd}", vpnFD.Fd.ToString());
+
+                    Log.Debug(TAG, "DEBUG: config.json content:\n" + configFile);
 
                     runConfigPath = prepareConfigPath + TrojanPlusMainActivity.RunningConfigSuffix;
                     File.WriteAllText(runConfigPath, configFile);

@@ -1,4 +1,4 @@
-﻿
+
 namespace TrojanPlusApp.Droid
 {
     using System.IO;
@@ -98,8 +98,7 @@ namespace TrojanPlusApp.Droid
 
                     Log.Debug(TAG, "GetWIFISSID " + currSSID);
 
-                    if ((currSSID == null && settings.AutoStopWifi.Count > 0) // ssid will be null in Android 10+ (API 29+)
-                        || settings.AutoStopWifi.Contains(currSSID))
+                    if (currSSID != null && settings.AutoStopWifi.Contains(currSSID))
                     {
                         starter.Switch(settings); // start again to stop the service
                         TrojanPlusMainActivity.ShowAutoNotification(this, Resx.TextResource.Notification_AutoStop);

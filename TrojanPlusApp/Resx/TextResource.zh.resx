@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -182,6 +182,18 @@
   </data>
   <data name="New_EnableFastOpenDetail" xml:space="preserve">
     <value>注意：在有些机型上面有可能需要Root才能生效。生效之后，虽然会减少延迟，但是可能会严重影响网速，请在开启之后记得测试一下速度。</value>
+  </data>
+  <data name="New_EnableQuic" xml:space="preserve">
+    <value>优先使用 Quic</value>
+  </data>
+  <data name="New_EnableQuicDetail" xml:space="preserve">
+    <value>尝试优先使用 Quic (HTTP/3) 协议进行连接（需要服务器开启对 Quic 协议的支持）。如果连接失败会自动回退。</value>
+  </data>
+  <data name="New_EnableOnlyQuicForDebug" xml:space="preserve">
+    <value>仅使用 Quic (测试)</value>
+  </data>
+  <data name="New_EnableOnlyQuicForDebugDetail" xml:space="preserve">
+    <value>仅用于测试：完全禁用 TCP 连接，强制仅使用 Quic 连接。</value>
   </data>
   <data name="New_ErrorAttributes" xml:space="preserve">
     <value>输入信息有不合规则的地方，请检查为空的字段，或标记为红色的地方</value>

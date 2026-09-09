@@ -285,6 +285,8 @@ namespace TrojanPlusApp.Droid
 
                 starter.serviceIsRunning = false;
                 starter.serviceIsBound = false;
+                starter.needSendStartMsg = false;
+                starter.communicator.SetStartBtnEnabled(true);
                 starter.RefreshRunningStatus();
                 Messenger = null;
             }

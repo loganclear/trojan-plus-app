@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -192,6 +192,18 @@
   </data>
   <data name="New_EnableFastOpenDetail" xml:space="preserve">
     <value>CAUTION: Might need Root to enable. After enabling, it can reduce some delay, but might decrease bandwidth seriously, please test bandwith after enabling.</value>
+  </data>
+  <data name="New_EnableQuic" xml:space="preserve">
+    <value>Prefer Quic</value>
+  </data>
+  <data name="New_EnableQuicDetail" xml:space="preserve">
+    <value>Prioritize Quic (HTTP/3) connection. Requires the server to support the Quic protocol.</value>
+  </data>
+  <data name="New_EnableOnlyQuicForDebug" xml:space="preserve">
+    <value>Only Quic For Debug</value>
+  </data>
+  <data name="New_EnableOnlyQuicForDebugDetail" xml:space="preserve">
+    <value>Only for debugging. Completely disables TCP connection and forces Quic connection.</value>
   </data>
   <data name="New_ErrorAttributes" xml:space="preserve">
     <value>Input Some information are wrong, please check those elements empty or marked as red.</value>
